@@ -1,0 +1,25 @@
+#!/bin/bash
+killall -KILL \
+	adprivacyd \
+	analyticsd \
+	aggregated \
+	assetsd \
+	bulletindistributord \
+	CAReportingService \
+	dasd \
+	duetexpertd \
+	exchangesyncd \
+	healthappd \
+	HeuristicInterpreter \
+	kbd \
+	MobileGestaltHelper \
+	newsd \
+	powerlogHelperd \
+	PowerUIAgent \
+	searchpartyd \
+	siriactionsd \
+	siriknowledged \
+	suggestd \
+	webbookmarksd \
+	2>/dev/null
+exit 0

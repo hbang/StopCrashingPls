@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Filter</key>
+	<dict>
+		<key>Executables</key>
+		<array>
+			<string>adprivacyd</string>
+			<string>analyticsd</string>
+			<string>aggregated</string>
+			<string>assetsd</string>
+			<string>bulletindistributord</string>
+			<string>CAReportingService</string>
+			<string>dasd</string>
+			<string>duetexpertd</string>
+			<string>exchangesyncd</string>
+			<string>healthappd</string>
+			<string>HeuristicInterpreter</string>
+			<string>kbd</string>
+			<string>MobileGestaltHelper</string>
+			<string>newsd</string>
+			<string>powerlogHelperd</string>
+			<string>PowerUIAgent</string>
+			<string>searchpartyd</string>
+			<string>siriactionsd</string>
+			<string>siriknowledged</string>
+			<string>suggestd</string>
+			<string>webbookmarksd</string>
+		</array>
+	</dict>
+</dict>
+</plist>
