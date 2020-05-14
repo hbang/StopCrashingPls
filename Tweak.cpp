@@ -6,6 +6,7 @@
 
 
 #include <sys/types.h>
+#include <signal.h>
 #include <sys/stat.h>
 #include <fcntl.h>
 
@@ -39,8 +40,10 @@
 
 
 __unused static void * (*_logos_orig$_ungrouped$dlopen)(const char *path, int mode); __unused static void * _logos_function$_ungrouped$dlopen(const char *path, int mode) {
-    if (hasPrefix(path, "/Library/MobileSubstrate/DynamicLibraries") || hasPrefix(path, "/usr/lib/TweakInject")) {
 
+    os_log(OS_LOG_DEFAULT, "stopcrashingpls: Checking %{public}s", path);
+    if (hasPrefix(path, "/Library/MobileSubstrate/DynamicLibraries") || hasPrefix(path, "/usr/lib/TweakInject")) {
+        raise(SIGINT);
         int load = 1;
         const char *name;
 
@@ -108,7 +111,10 @@ __unused static void * (*_logos_orig$_ungrouped$dlopen)(const char *path, int mo
                         CFTypeRef iname = CFArrayGetValueAtIndex(executables, index);
                         CFTypeID bStr = CFGetTypeID(iname);
                         if ( bStr == CFStringGetTypeID() && CFEqual(currentProgName, iname))
+                        {
+                            load = 1;
                             goto release;
+                        }
 
                         if (length == ++index)
                         {
