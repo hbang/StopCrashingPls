@@ -39,9 +39,9 @@
 
 __unused static void * (*_logos_orig$_ungrouped$dlopen)(const char *path, int mode); __unused static void * _logos_function$_ungrouped$dlopen(const char *path, int mode) {
 
-    os_log(OS_LOG_DEFAULT, "stopcrashingpls: Checking %{public}s", path);
     if (hasPrefix(path, "/Library/MobileSubstrate/DynamicLibraries") || hasPrefix(path, "/usr/lib/TweakInject")) {
-        raise(SIGINT);
+        // os_log(OS_LOG_DEFAULT, "stopcrashingpls: Checking %{public}s", path);
+        // raise(SIGINT);
         int load = 1;
         const char *name;
 
@@ -101,18 +101,17 @@ __unused static void * (*_logos_orig$_ungrouped$dlopen)(const char *path, int mo
                 int len = CFArrayGetCount(executables);
                 if ( len )
                 {
-                    int index = 0;
-                    while ( 1 )
+                    for  (int index = 0; index < len; index++)
                     {
                         CFTypeRef iname = CFArrayGetValueAtIndex(executables, index);
                         CFTypeID bStr = CFGetTypeID(iname);
                         if ( bStr == CFStringGetTypeID() && CFEqual(currentProgName, iname))
                         {
                             load = 1;
-                            goto release;
+                            break;
                         }
 
-                        if (length == ++index)
+                        if (length - 1 == index)
                         {
                             load = 0;
                             break;
