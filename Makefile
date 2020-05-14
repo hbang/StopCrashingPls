@@ -4,7 +4,11 @@ include $(THEOS)/makefiles/common.mk
 
 TWEAK_NAME = AAAAAAstopcrashingpls
 
-AAAAAAstopcrashingpls_FILES = Tweak.x
+ARCHS = arm64 arm64e
+
+AAAAAAstopcrashingpls_FILES = Tweak.cpp
+AAAAAAstopcrashingpls_FRAMEWORKS = CoreFoundation
+AAAAAAstopcrashingpls_CFLAGS = -w -framework
 
 include $(THEOS_MAKE_PATH)/tweak.mk
 
