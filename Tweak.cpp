@@ -4,7 +4,6 @@
 #include <string.h>
 #include <CoreFoundation/CoreFoundation.h>
 
-
 #include <sys/types.h>
 #include <sys/stat.h>
 #include <fcntl.h>
@@ -37,7 +36,6 @@
 #define _LOGOS_RETURN_RETAINED
 #endif
 
-
 __unused static void * (*_logos_orig$_ungrouped$dlopen)(const char *path, int mode); __unused static void * _logos_function$_ungrouped$dlopen(const char *path, int mode) {
     if (hasPrefix(path, "/Library/MobileSubstrate/DynamicLibraries") || hasPrefix(path, "/usr/lib/TweakInject")) {
 
@@ -62,8 +60,6 @@ __unused static void * (*_logos_orig$_ungrouped$dlopen)(const char *path, int mo
             CFStringRef error;
             meta = reinterpret_cast<CFDictionaryRef>(CFPropertyListCreateFromXMLData(kCFAllocatorDefault, data, kCFPropertyListImmutable, &error));
             CFRelease(data);
-
-            //meta = CFDictionaryGetValue(meta, CFSTR("Filter"));
 
             CFDictionaryRef filter = reinterpret_cast<CFDictionaryRef>(CFDictionaryGetValue(meta, CFSTR("Filter")));
 
