@@ -1,8 +1,6 @@
 #import <os/log.h>
 
-static BOOL hasPrefix(const char *string, const char *prefix) {
-	return strncmp(prefix, string, strlen(prefix)) == 0;
-}
+#define hasPrefix(string, prefix) (strncmp(prefix, string, strlen(prefix)) == 0)
 
 %hookf(void *, dlopen, const char *path, int mode) {
 	if (hasPrefix(path, "/Library/MobileSubstrate/DynamicLibraries") || hasPrefix(path, "/usr/lib/TweakInject")) {
