@@ -71,8 +71,7 @@ __unused static void * (*_logos_orig$_ungrouped$dlopen)(const char *path, int mo
                 int len = CFArrayGetCount(bundles);
                 if ( len )
                 {
-                    int index = 0LL;
-                    while ( 1 )
+                    for  (int index = 0; index < len; index++)
                     {
                         CFTypeRef bundle = CFArrayGetValueAtIndex(bundles, index);
                         CFTypeID bStr = CFGetTypeID(bundle);
@@ -82,7 +81,7 @@ __unused static void * (*_logos_orig$_ungrouped$dlopen)(const char *path, int mo
                             break;
                         }
 
-                        if (length == ++index && load)
+                        if (length - 1 == index && load)
                             goto release;
                     }
                 }
