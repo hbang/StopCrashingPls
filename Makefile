@@ -6,7 +6,7 @@ TWEAK_NAME = AAAAAAstopcrashingpls
 
 ARCHS = arm64 arm64e
 
-AAAAAAstopcrashingpls_FILES = Tweak.cpp
+AAAAAAstopcrashingpls_FILES = Tweak.mm
 AAAAAAstopcrashingpls_FRAMEWORKS = CoreFoundation
 AAAAAAstopcrashingpls_CFLAGS = -w -framework
 
