@@ -1,13 +1,13 @@
 Package: ws.hbang.stopcrashingpls
 Name: StopCrashingPls
 Depends: firmware (>= 13.0), mobilesubstrate
-Version: 1.0
+Version: 1.0.1
 Architecture: iphoneos-arm
 Description: Workaround for iOS 13 jetsam crash issue
 Maintainer: HASHBANG Productions <support@hbang.ws>
 Author: HASHBANG Productions <support@hbang.ws>
 Section: Tweaks
 Icon: https://chariz.com/cdn/icon/stopcrashingpls/icon@3x.png
-Depiction: https://repo.chariz.com/package/ws.hbang.stopcrashingpls/
+Depiction: https://chariz.com/get/stopcrashingpls
 Support: https://hashbang.productions/support/
 Tag: purpose::extension, compatible::ios13
